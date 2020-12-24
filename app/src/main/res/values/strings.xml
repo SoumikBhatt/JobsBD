@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BDJobs</string>
+    <string name="title_home">Home</string>
+    <string name="label_featured">Featured</string>
+</resources>

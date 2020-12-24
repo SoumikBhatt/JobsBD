@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="5dp"
+    app:cardCornerRadius="10dp"
+    android:elevation="8dp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/rl_parent"
+        android:minHeight="150dp">
+
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/iv_company_logo"
+            android:src="@android:drawable/sym_def_app_icon"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_featured"
+            android:visibility="gone"
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/iv_featured_logo"
+                android:src="@drawable/ic_featured_badge"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_featured"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/feature_color"
+                android:textStyle="bold"
+                android:text="@string/label_featured"
+                android:textSize="14sp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_toEndOf="@id/iv_company_logo"
+            android:layout_toStartOf="@id/ll_featured"
+            android:layout_marginStart="8dp"
+            android:id="@+id/ll_header">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_position"
+                android:textColor="@color/primary_color"
+                android:fontFamily="@font/montserrat_extra_bold"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text = "@string/app_name"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_company_name"
+                tools:text="@string/app_name"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_header"
+            android:layout_marginTop="8dp"
+            android:padding="15dp"
+            android:background="@drawable/bg_rounded_grey"
+            android:id="@+id/rl_information">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_deadline"
+                    android:fontFamily="@font/montserrat_light"
+                    app:drawableStartCompat="@drawable/ic_deadline"
+                    android:drawablePadding="8dp"
+                    tools:text="@string/app_name"
+                    android:textColor="@color/text_color"
+                    android:textSize="12sp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_experience"
+                    android:fontFamily="@font/montserrat_light"
+                    app:drawableStartCompat="@drawable/ic_experience"
+                    android:drawablePadding="8dp"
+                    android:layout_marginTop="8dp"
+                    tools:text="@string/app_name"
+                    android:textColor="@color/text_color"
+                    android:textSize="12sp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_salary"
+                    android:fontFamily="@font/montserrat_light"
+                    app:drawableStartCompat="@drawable/ic_taka"
+                    android:drawablePadding="8dp"
+                    android:textColor="@color/text_color"
+                    android:layout_marginTop="8dp"
+                    tools:text="@string/app_name"
+                    android:textSize="12sp"/>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
