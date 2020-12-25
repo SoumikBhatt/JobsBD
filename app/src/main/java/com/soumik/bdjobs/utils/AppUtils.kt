@@ -23,10 +23,10 @@ fun lightStatusBar(activity: Activity, value:Boolean){
     }
 }
 
-fun toolbarStyle(context: AppCompatActivity, toolbar: Toolbar, title: String) {
+fun toolbarStyle(context: AppCompatActivity, toolbar: Toolbar, title: String,iconEnable:Boolean) {
 
     (context).setSupportActionBar(toolbar)
-    context.supportActionBar!!.setDisplayHomeAsUpEnabled(false)
+    context.supportActionBar!!.setDisplayHomeAsUpEnabled(iconEnable)
     context.supportActionBar!!.setDisplayShowHomeEnabled(true)
     context.supportActionBar!!.setDisplayShowTitleEnabled(true)
 

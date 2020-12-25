@@ -25,6 +25,7 @@ import java.text.SimpleDateFormat
 class JobListAdapter:RecyclerView.Adapter<JobListAdapter.Holder>() {
 
     val differ = AsyncListDiffer(this,DiffUtilItemCallback<Data>())
+    private var onItemClicked:((Data)->Unit)?=null
 
 
     inner class Holder(itemView:View):RecyclerView.ViewHolder(itemView) {
@@ -54,7 +55,6 @@ class JobListAdapter:RecyclerView.Adapter<JobListAdapter.Holder>() {
             if (!data.recruitingCompanysProfile.isNullOrEmpty()) companyTV.text = data.recruitingCompanysProfile
 
             val parser = SimpleDateFormat("M/dd/yyyy")
-            val formatter = SimpleDateFormat("dd MMM, yyyy")
             val day = SimpleDateFormat("dd").format(parser.parse(data.deadline!!)!!)
             val month = SimpleDateFormat("MMM").format(parser.parse(data.deadline)!!)
             val year = SimpleDateFormat("yyyy").format(parser.parse(data.deadline)!!)
@@ -71,6 +71,9 @@ class JobListAdapter:RecyclerView.Adapter<JobListAdapter.Holder>() {
             else if (data.minSalary.isNullOrEmpty() && !data.maxSalary.isNullOrEmpty()) "Up to Tk. ${data.maxSalary} (Monthly)"
             else "Negotiable"
 
+            itemView.setOnClickListener {
+                onItemClicked?.let { it(data) }
+            }
 
         }
     }
@@ -91,5 +94,9 @@ class JobListAdapter:RecyclerView.Adapter<JobListAdapter.Holder>() {
 
     override fun getItemViewType(position: Int): Int {
         return position
+    }
+
+    fun onItemClicked(listener:(Data)->Unit) {
+        onItemClicked = listener
     }
 }

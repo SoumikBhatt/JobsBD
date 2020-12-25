@@ -1,5 +1,6 @@
 package com.soumik.bdjobs.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         init()
 
-        toolbarStyle(this,mToolbar,getString(R.string.title_home))
+        toolbarStyle(this,mToolbar,getString(R.string.title_home),false)
     }
 
     override fun onStart() {
@@ -88,6 +89,12 @@ class MainActivity : AppCompatActivity() {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = mAdapter
+        }
+
+        mAdapter.onItemClicked {
+            startActivity(Intent(this@MainActivity,DetailsActivity::class.java)
+                .putExtra(DetailsActivity.KEY_JOB_DATA,it)
+            )
         }
 
     }

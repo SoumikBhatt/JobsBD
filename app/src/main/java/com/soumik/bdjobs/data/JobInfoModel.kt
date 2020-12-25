@@ -1,6 +1,6 @@
 package com.soumik.bdjobs.data
 import com.google.gson.annotations.SerializedName
-
+import java.io.Serializable
 
 
 //
@@ -16,14 +16,14 @@ data class JobInfoModel(
     val message: String?,
     @SerializedName("statuscode")
     val statuscode: String?
-)
+):Serializable
 
 data class Common(
     @SerializedName("total_records_found")
     val totalRecordsFound: Int?,
     @SerializedName("totalpages")
     val totalpages: Int?
-)
+):Serializable
 
 data class Data(
     @SerializedName("deadline")
@@ -46,7 +46,7 @@ data class Data(
     val minSalary: String?,
     @SerializedName("recruitingCompany'sProfile")
     val recruitingCompanysProfile: String?
-)
+):Serializable
 
 data class JobDetails(
     @SerializedName("ApplyInstruction")
@@ -57,4 +57,4 @@ data class JobDetails(
     val lastDate: String?,
     @SerializedName("Title")
     val title: String?
-)
+):Serializable
